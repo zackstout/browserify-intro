@@ -52,6 +52,7 @@ camera.position.z = 5;
 // scene.add( light1 );
 // light1.position.y = 10;
 
+var t=0;
 var light = new THREE.PointLight(0xffffff);
 light.position.set(-10,20,10);
 scene.add(light);
@@ -63,6 +64,9 @@ var animate = function () {
   cube.rotation.y += 0.1;
 
   renderer.render(scene, camera);
+  light.position.x = -10 * Math.sin(t);
+  light.position.z = 10 * Math.cos(t);
+  t += 0.1;
 };
 
 animate();
